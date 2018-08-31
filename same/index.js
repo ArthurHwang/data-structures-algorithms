@@ -35,6 +35,9 @@ function sameON(array1, array2) {
     arrayObj2[val] = (arrayObj2[val] || 0) + 1;
   }
 
+  console.log(arrayObj1);
+  console.log(arrayObj2);
+
   for (let key in arrayObj1) {
     if (!(key ** 2 in arrayObj2)) {
       return false;
@@ -53,7 +56,7 @@ let t2 = performance.now();
 console.log(`elapsed time: ${(t2 - t1) / 1000} seconds`);
 
 let t3 = performance.now();
-sameON([1, 2, 3], [1, 4, 9]);
+sameON([1, 2, 2, 3], [1, 4, 4, 9]);
 let t4 = performance.now();
 console.log(`elapsed time: ${(t4 - t3) / 1000} seconds`);
 
