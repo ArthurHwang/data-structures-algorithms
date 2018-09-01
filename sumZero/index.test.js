@@ -1,4 +1,4 @@
-const { sumZeroON2, sumZeroON } = require('./sumZero')
+const { sumZeroON2, sumZeroON } = require('./index')
 
 describe('sumZeroON2', () => {
   test('it should be a function', () => {
