@@ -2,34 +2,33 @@ const { performance } = require("perf_hooks");
 
 // Given two strings, write a function to determine if the second string is an anagram of the first.
 
-function validAnagram(string1, string2) {
-  if (!string1 || !string2) return undefined;
-  if (string1.length !== string2.length) return false;
+// o(n) solution
+function validAnagram(str1, str2) {
+  if (str1.length !== str2.length) return false;
 
-  const stringObj1 = {};
-  const stringObj2 = {};
+  const mapper = {};
 
-  for (let char of string1) {
-    stringObj1[char] = (stringObj1[char] || 0) + 1;
+  for (let i = 0; i < str1.length; i++) {
+    let letter = str1[i];
+    mapper[letter] ? (mapper[letter] += 1) : (mapper[letter] = 1);
   }
-
-  for (let char of string2) {
-    stringObj2[char] = (stringObj2[char] || 0) + 1;
-  }
-
-  console.log(Object.keys(stringObj1));
-  console.log(Object.keys(stringObj2));
-
-  for (let key in stringObj1) {
-    if (!(key in stringObj2)) {
+  for (let i = 0; i < str2.length; i++) {
+    let letter = str2[i];
+    if (!mapper[letter]) {
       return false;
+    } else {
+      mapper[letter] -= 1;
     }
-
-    if (stringObj1[key] !== stringObj2[key]) {
-      return false;
-    }
+    return true;
   }
-  return true;
 }
-console.log(validAnagram("fucking", "kucfani"));
+
+console.log(validAnagram("hi", "zi"));
+
+// performance
+let t1 = performance.now();
+validAnagram("hello", "lleoh");
+let t2 = performance.now();
+console.log(`elapsed time: ${(t2 - t1) / 1000} seconds`);
+
 module.exports = validAnagram;
