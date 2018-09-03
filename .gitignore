@@ -2,3 +2,7 @@ node_modules
 coverage
 internal
 .vscode
+/coverage
+/internal
+/node_modules
+/.vscode

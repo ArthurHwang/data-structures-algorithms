@@ -1,4 +1,4 @@
-validAnagram = require('./validAnagram')
+validAnagram = require('./index')
 
 describe('validAnagram', () => {
   test('it should be a function', () => {
