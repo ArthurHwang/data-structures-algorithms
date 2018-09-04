@@ -1,5 +1,6 @@
 const { performance } = require('perf_hooks')
 
+// o(n^2) solution
 function naiveStringSearch(str, substr) {
   let count = 0
 
