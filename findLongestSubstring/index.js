@@ -5,7 +5,6 @@ const { performance } = require('perf_hooks')
 // distinct characters
 
 // o(n) solution
-
 function findLongestSubstring(str) {
   if (!str) return null
   let longest = 0
@@ -22,5 +21,11 @@ function findLongestSubstring(str) {
   }
   return longest
 }
+
+// performance
+let t1 = performance.now()
+findLongestSubstring('whatisthedealwithallthesethingsgoingaroudntoday')
+let t2 = performance.now()
+console.log(`elapsed time: ${(t2 - t1) / 1000} seconds`)
 
 module.exports = findLongestSubstring
