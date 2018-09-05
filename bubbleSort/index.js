@@ -53,6 +53,20 @@ function bubbleSortOP(arr) {
   return arr
 }
 
-console.log(bubbleSortUO([]))
+// performance
+let t1 = performance.now()
+bubbleSortUO([-10, 2, -50, 4, 3, 8, 9, 45, -100, 30, 2, 9, 8, 4, 3, 2, 10, 30, 44, 1004, -3000, 5000, -10])
+let t2 = performance.now()
+console.log(`elapsed time: ${(t2 - t1) / 1000} seconds`)
+
+t1 = performance.now()
+bubbleSortES6([-10, 2, -50, 4, 3, 8, 9, 45, -100, 30, 2, 9, 8, 4, 3, 2, 10, 30, 44, 1004, -3000, 5000, -10])
+t2 = performance.now()
+console.log(`elapsed time: ${(t2 - t1) / 1000} seconds`)
+
+t1 = performance.now()
+bubbleSortOP([-10, 2, -50, 4, 3, 8, 9, 45, -100, 30, 2, 9, 8, 4, 3, 2, 10, 30, 44, 1004, -3000, 5000, -10])
+t2 = performance.now()
+console.log(`elapsed time: ${(t2 - t1) / 1000} seconds`)
 
 module.exports = { bubbleSortES6, bubbleSortOP, bubbleSortUO }
