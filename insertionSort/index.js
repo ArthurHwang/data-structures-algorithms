@@ -33,7 +33,15 @@ function insertionSortV2(arr) {
   return arr
 }
 
-console.log(insertionSortV1([2, 1, 9, 75, 4, 3, -50, 20, 30]))
-console.log(insertionSortV2([2, 1, 9, 75, 4, 3, -50, 20, 30]))
-//  j
+// performance
+let t1 = performance.now()
+insertionSortV1([2, 1, 9, 75, 4, 3, -50, 20, 30])
+let t2 = performance.now()
+console.log(`Elapsed Time: ${(t2 - t1) / 1000} seconds`)
+
+t1 = performance.now()
+insertionSortV2([2, 1, 9, 75, 4, 3, -50, 20, 30])
+t2 = performance.now()
+console.log(`Elapsed Time: ${(t2 - t1) / 1000} seconds`)
+
 module.exports = { insertionSortV1, insertionSortV2 }

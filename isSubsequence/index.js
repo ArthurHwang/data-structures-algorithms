@@ -22,6 +22,7 @@ function isSubsequence(str1, str2) {
   }
 }
 
+// performance
 let t1 = performance.now()
 isSubsequence('abc', 'acb')
 let t2 = performance.now()
