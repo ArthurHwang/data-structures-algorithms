@@ -34,14 +34,15 @@ function insertionSortV2(arr) {
 }
 
 // performance
+const data = Array.apply(null, { length: 100000 }).map(Function.call, Math.random)
 let t1 = performance.now()
-insertionSortV1([2, 1, 9, 75, 4, 3, -50, 20, 30])
+insertionSortV1(data)
 let t2 = performance.now()
-console.log(`Elapsed Time: ${(t2 - t1) / 1000} seconds`)
+console.log(`Elapsed Time: ${(t2 - t1) / 1000} seconds`) // ~7 seconds
 
 t1 = performance.now()
-insertionSortV2([2, 1, 9, 75, 4, 3, -50, 20, 30])
+insertionSortV2(data)
 t2 = performance.now()
-console.log(`Elapsed Time: ${(t2 - t1) / 1000} seconds`)
+console.log(`Elapsed Time: ${(t2 - t1) / 1000} seconds`) // ~ 0.0016 seconds
 
 module.exports = { insertionSortV1, insertionSortV2 }

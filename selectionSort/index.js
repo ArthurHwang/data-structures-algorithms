@@ -38,14 +38,16 @@ function selectionSortV2(arr) {
 }
 
 // performance
+const data = Array.apply(null, { length: 100000 }).map(Function.call, Math.random)
+
 let t1 = performance.now()
-selectionSortV1([-10, 2, -50, 4, 3, 8, 9, 45, -100, 30, 2, 9, 8, 4, 3, 2, 10, 30, 44, 1004, -3000, 5000, -10])
+selectionSortV1(data)
 let t2 = performance.now()
-console.log(`elapsed time: ${(t2 - t1) / 1000} seconds`)
+console.log(`elapsed time: ${(t2 - t1) / 1000} seconds`) // ~14 seconds
 
 t1 = performance.now()
-selectionSortV2([-10, 2, -50, 4, 3, 8, 9, 45, -100, 30, 2, 9, 8, 4, 3, 2, 10, 30, 44, 1004, -3000, 5000, -10])
+selectionSortV2(data)
 t2 = performance.now()
-console.log(`elapsed time: ${(t2 - t1) / 1000} seconds`)
+console.log(`elapsed time: ${(t2 - t1) / 1000} seconds`) // ~7 seconds
 
 module.exports = { selectionSortV1, selectionSortV2 }

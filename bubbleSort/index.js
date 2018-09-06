@@ -54,19 +54,21 @@ function bubbleSortOP(arr) {
 }
 
 // performance
+const data = Array.apply(null, { length: 100000 }).map(Function.call, Math.random)
+
 let t1 = performance.now()
-bubbleSortUO([-10, 2, -50, 4, 3, 8, 9, 45, -100, 30, 2, 9, 8, 4, 3, 2, 10, 30, 44, 1004, -3000, 5000, -10])
+bubbleSortUO(data)
 let t2 = performance.now()
-console.log(`elapsed time: ${(t2 - t1) / 1000} seconds`)
+console.log(`elapsed time: ${(t2 - t1) / 1000} seconds`) // ~17 seconds
 
 t1 = performance.now()
-bubbleSortES6([-10, 2, -50, 4, 3, 8, 9, 45, -100, 30, 2, 9, 8, 4, 3, 2, 10, 30, 44, 1004, -3000, 5000, -10])
+bubbleSortES6(data)
 t2 = performance.now()
-console.log(`elapsed time: ${(t2 - t1) / 1000} seconds`)
+console.log(`elapsed time: ${(t2 - t1) / 1000} seconds`) // ~11 seconds
 
 t1 = performance.now()
-bubbleSortOP([-10, 2, -50, 4, 3, 8, 9, 45, -100, 30, 2, 9, 8, 4, 3, 2, 10, 30, 44, 1004, -3000, 5000, -10])
+bubbleSortOP(data)
 t2 = performance.now()
-console.log(`elapsed time: ${(t2 - t1) / 1000} seconds`)
+console.log(`elapsed time: ${(t2 - t1) / 1000} seconds`) // ~0.0017 seconds
 
 module.exports = { bubbleSortES6, bubbleSortOP, bubbleSortUO }
