@@ -53,20 +53,31 @@ class SinglyLinkedList {
     }
     return headNode
   }
+
+  unshift(val) {
+    const newNode = new Node(val)
+    const previousHead = this.head
+
+    if (!this.head) {
+      this.head = newNode
+      this.tail = this.head
+    }
+
+    this.head = newNode
+    this.head.next = previousHead
+    this.length++
+    return this
+  }
 }
 
-// const list = new SinglyLinkedList()
-// list.push(1)
-// list.push(2)
-// list.push(3)
-// list.push(4)
+const list = new SinglyLinkedList()
+list.push(1)
+list.push(2)
+list.push(3)
+list.push(4)
 
-// list.pop()
-// list.shift()
+list.unshift(0)
 
-// console.log(list)
-// console.log(list.head.next)
-// console.log(list.head.next.next)
-// console.log(list.head.next.next.next)
+console.log(list)
 
-module.exports = { Node, SinglyLinkedList }
+module.exports = SinglyLinkedList
