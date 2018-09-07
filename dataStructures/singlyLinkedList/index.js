@@ -24,16 +24,49 @@ class SinglyLinkedList {
     this.length++
     return this
   }
+
+  pop() {
+    if (!this.head) return undefined
+    let currentNode = this.head
+    let previous = this.head
+    while (currentNode.next) {
+      previous = currentNode
+      currentNode = currentNode.next
+    }
+    this.tail = previous
+    this.tail.next = null
+    this.length--
+    if (this.length === 0) {
+      this.head = null
+      this.tail = null
+    }
+    return currentNode
+  }
+
+  shift() {
+    if (!this.head) return undefined
+    let headNode = this.head
+    this.head = headNode.next
+    this.length--
+    if (this.length === 0) {
+      this.tail = null
+    }
+    return headNode
+  }
 }
 
-const list = new SinglyLinkedList()
-list.push(1)
-list.push(2)
-list.push(3)
-list.push(4)
-console.log(list)
+// const list = new SinglyLinkedList()
+// list.push(1)
+// list.push(2)
+// list.push(3)
+// list.push(4)
+
+// list.pop()
+// list.shift()
+
+// console.log(list)
 // console.log(list.head.next)
 // console.log(list.head.next.next)
 // console.log(list.head.next.next.next)
 
-// module.exports = singlyLinkedList
+module.exports = { Node, SinglyLinkedList }
