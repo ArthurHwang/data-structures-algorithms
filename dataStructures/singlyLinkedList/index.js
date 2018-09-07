@@ -61,12 +61,24 @@ class SinglyLinkedList {
     if (!this.head) {
       this.head = newNode
       this.tail = this.head
+    } else {
+      this.head = newNode
+      this.head.next = previousHead
     }
-
-    this.head = newNode
-    this.head.next = previousHead
     this.length++
     return this
+  }
+
+  get(index) {
+    if (index < 0 || index > this.length) return null
+    let count = 0
+    let currentNode = this.head
+
+    while (count < index) {
+      currentNode = currentNode.next
+      count++
+    }
+    return currentNode
   }
 }
 
