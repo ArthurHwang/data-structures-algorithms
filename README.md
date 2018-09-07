@@ -1,3 +1,3 @@
 # coding-challenges
 
-A place where I am constantly improving my programming skills and knowledge.
+My safe space where I am constantly improving my programming skills and knowledge.
