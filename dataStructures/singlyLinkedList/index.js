@@ -80,6 +80,16 @@ class SinglyLinkedList {
     }
     return currentNode
   }
+
+  set(val, index) {
+    const foundNode = this.get(index)
+
+    if (foundNode) {
+      foundNode.val = val
+      return true
+    }
+    return false
+  }
 }
 
 const list = new SinglyLinkedList()

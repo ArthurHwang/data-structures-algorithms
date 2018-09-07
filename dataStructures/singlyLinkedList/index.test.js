@@ -51,4 +51,13 @@ describe('SinglyLinkedList', () => {
     expect(list.get(2).val).toEqual(3)
     expect(list.get(-1)).toEqual(null)
   })
+  test('it should allow updating an existing node', () => {
+    const list = new SinglyLinkedList()
+    list.push(1)
+    list.push(2)
+    list.push(3)
+    list.set('Hello Mother', 1)
+    expect(list.get(1).val).toEqual('Hello Mother')
+    expect(list.get(1).next.val).toEqual(3)
+  })
 })
