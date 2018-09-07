@@ -26,7 +26,6 @@ function quickSort(arr, left = 0, right = arr.length - 1) {
   }
   return arr
 }
-console.log(quickSort([1, 2, 3, -5, 4, -10]))
 
 // performance
 const data = Array.apply(null, { length: 100000 }).map(Function.call, Math.random)
