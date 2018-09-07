@@ -35,4 +35,4 @@ quickSort(data)
 let t2 = performance.now()
 console.log(`elapsed time: ${(t2 - t1) / 1000} seconds`) // ~0.018 seconds
 
-module.exports = quickSort
+module.exports = { quickSort, partition }

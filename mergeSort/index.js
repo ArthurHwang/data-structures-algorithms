@@ -41,4 +41,4 @@ mergeSort(data)
 let t2 = performance.now()
 console.log(`elapsed time: ${(t2 - t1) / 1000} seconds`) // ~0.038 seconds
 
-module.exports = mergeSort
+module.exports = { mergeSort, merge }
