@@ -118,15 +118,27 @@ class SinglyLinkedList {
     this.length--
     return removed
   }
+
+  reverse() {
+    let node = this.head
+    this.head = this.tail
+    this.tail = node
+    let next
+    let previous = null
+
+    for (let i = 0; i < this.length; i++) {
+      next = node.next
+      node.next = previous
+      previous = node
+      node = next
+    }
+    return this
+  }
 }
 
-const list = new SinglyLinkedList()
-list.push(1)
-list.push(2)
-list.push(3)
-list.push(4)
-
-list.remove(3)
-console.log(list)
+// Access - O(N)
+// Insertion - O(1)
+// Destroy - O(1) or O(N)
+// Search - O(N)
 
 module.exports = SinglyLinkedList
