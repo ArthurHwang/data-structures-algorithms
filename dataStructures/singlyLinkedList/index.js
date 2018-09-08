@@ -90,6 +90,34 @@ class SinglyLinkedList {
     }
     return false
   }
+
+  insert(index, val) {
+    if (index < 0 || index > this.length) return false
+    if (index === this.length) return !!this.push(val)
+    if (index === 0) return !!this.unshift(val)
+
+    const newNode = new Node(val)
+    const previous = this.get(index - 1)
+    const temp = previous.next
+
+    previous.next = newNode
+    newNode.next = temp
+    this.length++
+    return true
+  }
+
+  remove(index) {
+    if (index < 0 || index > this.length) return null
+    if (index === this.length - 1) return this.pop()
+    if (index === 0) return this.shift()
+
+    const previous = this.get(index - 1)
+    const removed = previous.next
+
+    previous.next = removed.next
+    this.length--
+    return removed
+  }
 }
 
 const list = new SinglyLinkedList()
@@ -98,8 +126,7 @@ list.push(2)
 list.push(3)
 list.push(4)
 
-list.unshift(0)
-
+list.remove(3)
 console.log(list)
 
 module.exports = SinglyLinkedList
