@@ -15,7 +15,7 @@ describe('DoublyLinkedList', () => {
     expect(list.head.next.next.prev.val).toBe(2)
     expect(list.length).toBe(3)
   })
-  xtest('it should remove items from the end of list', () => {
+  test('it should remove items from the end of list', () => {
     const list = new DoublyLinkedList()
     list.push(1)
     list.push(2)
@@ -25,7 +25,7 @@ describe('DoublyLinkedList', () => {
     expect(list.tail.next).toBe(null)
     expect(list.length).toBe(2)
   })
-  xtest('it should allow deletion of first item in list', () => {
+  test('it should allow deletion of first item in list', () => {
     const list = new DoublyLinkedList()
     list.push(1)
     list.push(2)
@@ -35,7 +35,7 @@ describe('DoublyLinkedList', () => {
     expect(list.head.next.val).toBe(3)
     expect(list.length).toBe(2)
   })
-  xtest('it should allow insertion of first item in list', () => {
+  test('it should allow insertion of first item in list', () => {
     const list = new DoublyLinkedList()
     list.push(1)
     list.push(2)
@@ -45,25 +45,26 @@ describe('DoublyLinkedList', () => {
     expect(list.head.next.val).toBe(1)
     expect(list.length).toBe(4)
   })
-  xtest('it should allow retrieving a specific index', () => {
+  test('it should allow retrieving a specific index', () => {
     const list = new DoublyLinkedList()
     list.push(1)
     list.push(2)
     list.push(3)
     expect(list.get(1).val).toBe(2)
     expect(list.get(2).val).toBe(3)
-    expect(list.get(-1)).toBe(null)
+    expect(list.get(-1)).toBe(undefined)
   })
-  xtest('it should allow updating an existing node', () => {
+  test('it should allow updating an existing node', () => {
     const list = new DoublyLinkedList()
     list.push(1)
     list.push(2)
     list.push(3)
-    list.set('Hello Mother', 1)
-    expect(list.get(1).val).toBe('Hello Mother')
+    list.set(1, 'Hi Mom')
+    expect(list.get(1).val).toBe('Hi Mom')
     expect(list.get(1).next.val).toBe(3)
+    expect(list.get(1).prev.val).toBe(1)
   })
-  xtest('it should allow insertion at a specific index', () => {
+  test('it should allow insertion at a specific index', () => {
     const list = new DoublyLinkedList()
     list.push(1)
     list.push(2)
@@ -71,22 +72,12 @@ describe('DoublyLinkedList', () => {
     list.insert(1, 500)
     expect(list.get(1).val).toBe(500)
   })
-  xtest('it should allow removal at a specific index', () => {
+  test('it should allow removal at a specific index', () => {
     const list = new DoublyLinkedList()
     list.push(1)
     list.push(2)
     list.push(3)
     list.remove(1)
     expect(list.get(1).val).toBe(3)
-  })
-  xtest('it should allow reversal of the entire list', () => {
-    const list = new DoublyLinkedList()
-    list.push(1)
-    list.push(2)
-    list.push(3)
-    list.reverse()
-    expect(list.get(0).val).toBe(3)
-    expect(list.get(1).val).toBe(2)
-    expect(list.get(2).val).toBe(1)
   })
 })
