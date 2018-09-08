@@ -88,10 +88,9 @@ class DoublyLinkedList {
 
   get(index) {
     if (index < 0 || index >= this.length) return undefined
-    if (index < this.length / 2) {
+    if (index <= this.length / 2) {
       let currentNode = this.head
       let counter = 0
-
       while (index !== counter) {
         currentNode = currentNode.next
         counter++
@@ -99,9 +98,7 @@ class DoublyLinkedList {
       return currentNode
     } else {
       let counter = this.length - 1
-
       let currentNode = this.tail
-
       while (index !== counter) {
         currentNode = currentNode.prev
         counter--
@@ -110,7 +107,17 @@ class DoublyLinkedList {
     }
   }
 
-  set() {}
+  set(index, val) {
+    if (!this.head) return undefined
+    if (index < 0 || index >= this.length) return undefined
+    const node = this.get(index)
+
+    if (node) {
+      node.val = val
+      return true
+    }
+    return false
+  }
 
   insert() {}
 
@@ -119,13 +126,15 @@ class DoublyLinkedList {
 
 const list = new DoublyLinkedList()
 
-list.push('fucker')
-list.push('you')
-list.push('whore')
+list.push(1)
+list.push(2)
+list.push(3)
 
 list.print()
 
-console.log(list.get(3))
+list.set(1, 'hezbollah')
+
+list.print()
 
 // console.log(list)
 
