@@ -30,13 +30,13 @@ class DoublyLinkedList {
   }
 
   print() {
-    let returnedArray = []
+    let printArray = []
     let currentNode = this.head
     while (currentNode) {
-      returnedArray.push(currentNode.val)
+      printArray.push(currentNode.val)
       currentNode = currentNode.next
     }
-    console.log(returnedArray, this.length)
+    console.log(printArray, this.length)
   }
 
   pop() {
@@ -119,9 +119,26 @@ class DoublyLinkedList {
     return false
   }
 
-  insert() {}
+  insert(index, val) {
+    if (index < 0 || index > this.length) return undefined
+    if (index === 0) return !!this.unshift(val)
+    if (index === this.length) return !!this.push(val)
 
-  remove() {}
+    const newNode = new Node(val)
+    const beforeNode = this.get(index - 1)
+    const afterNode = beforeNode.next
+
+    beforeNode.next = newNode
+    newNode.next = afterNode
+
+    afterNode.prev = newNode
+    newNode.prev = beforeNode
+
+    this.length++
+    return true
+  }
+
+  remove(index) {}
 }
 
 const list = new DoublyLinkedList()
@@ -132,7 +149,7 @@ list.push(3)
 
 list.print()
 
-list.set(1, 'hezbollah')
+list.insert(1, 'WOW')
 
 list.print()
 
