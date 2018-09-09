@@ -1,6 +1,6 @@
 const Queue = require('./index')
 
-describe('queue', () => {
+describe('Queue', () => {
   test('it should be an object', () => {
     const queue = new Queue()
     expect(typeof queue).toBe('object')
