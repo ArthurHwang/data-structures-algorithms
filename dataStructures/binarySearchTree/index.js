@@ -42,28 +42,38 @@ class BinarySearchTree {
 
   search(val) {
     if (!this.root) return false
-    if (this.root.value === val) {
-      return true
-    } else {
-      let currentNode = this.root
-      while (currentNode) {
-        if (currentNode.value === val) {
-          return true
-        } else if (val < currentNode.value) {
-          if (currentNode.left) {
-            currentNode = currentNode.left
-          } else {
-            return false
-          }
-        } else if (val > currentNode.value) {
-          if (currentNode.right) {
-            currentNode = currentNode.right
-          } else {
-            return false
-          }
-        }
+
+    let currentNode = this.root
+    let found = false
+
+    while (currentNode && !found) {
+      if (val < currentNode.value) {
+        currentNode = currentNode.left
+      } else if (val > currentNode.value) {
+        currentNode = currentNode.right
+      } else {
+        found = true
       }
     }
+    return found ? currentNode : null
+  }
+
+  contains(val) {
+    if (!this.root) return false
+
+    let currentNode = this.root
+    let found = false
+
+    while (currentNode && !found) {
+      if (val < currentNode.value) {
+        currentNode = currentNode.left
+      } else if (val > currentNode.value) {
+        currentNode = currentNode.right
+      } else {
+        found = true
+      }
+    }
+    return found
   }
 }
 
@@ -77,6 +87,9 @@ BST.insert(10)
 BST.insert(200)
 
 // console.log(BST)
-console.log(BST.search(1000))
+console.log(BST.contains(90))
+console.log(BST.contains(33))
+console.log(BST.search(40))
+console.log(BST.search(50))
 
 module.exports = BinarySearchTree
