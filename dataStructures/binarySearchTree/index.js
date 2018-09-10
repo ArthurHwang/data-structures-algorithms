@@ -105,6 +105,8 @@ class BinarySearchTree {
     traverse(current)
     return data
   }
+
+  DFSInorder() {}
 }
 
 const BST = new BinarySearchTree()
@@ -114,7 +116,6 @@ BST.insert(0)
 BST.insert(40)
 BST.insert(90)
 BST.insert(10)
-BST.insert(200)
 
 // console.log(BST)
 // console.log(BST.contains(90))
