@@ -57,7 +57,6 @@ class SinglyLinkedList {
   unshift(val) {
     const newNode = new Node(val)
     const previousHead = this.head
-
     if (!this.head) {
       this.head = newNode
       this.tail = this.head
@@ -73,7 +72,6 @@ class SinglyLinkedList {
     if (index < 0 || index > this.length) return null
     let count = 0
     let currentNode = this.head
-
     while (count < index) {
       currentNode = currentNode.next
       count++
@@ -83,7 +81,6 @@ class SinglyLinkedList {
 
   set(val, index) {
     const foundNode = this.get(index)
-
     if (foundNode) {
       foundNode.val = val
       return true
@@ -95,11 +92,9 @@ class SinglyLinkedList {
     if (index < 0 || index > this.length) return false
     if (index === this.length) return !!this.push(val)
     if (index === 0) return !!this.unshift(val)
-
     const newNode = new Node(val)
     const previous = this.get(index - 1)
     const temp = previous.next
-
     previous.next = newNode
     newNode.next = temp
     this.length++
@@ -110,10 +105,8 @@ class SinglyLinkedList {
     if (index < 0 || index > this.length) return null
     if (index === this.length - 1) return this.pop()
     if (index === 0) return this.shift()
-
     const previous = this.get(index - 1)
     const removed = previous.next
-
     previous.next = removed.next
     this.length--
     return removed
@@ -125,7 +118,6 @@ class SinglyLinkedList {
     this.tail = node
     let next
     let previous = null
-
     for (let i = 0; i < this.length; i++) {
       next = node.next
       node.next = previous
