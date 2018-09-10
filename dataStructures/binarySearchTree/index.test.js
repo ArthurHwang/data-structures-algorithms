@@ -83,3 +83,20 @@ describe('Depth First Search Postorder', () => {
     expect(BST.DFSPostorder()[1].value).toBe(90)
   })
 })
+
+describe('Depth First Search Inorder', () => {
+  test('it should be a function', () => {
+    const BST = new BinarySearchTree()
+    expect(typeof BST.DFSInorder).toBe('function')
+  })
+  test('it should return an array with all visited nodes in specific order', () => {
+    const BST = new BinarySearchTree()
+    BST.insert(100)
+    BST.insert(0)
+    BST.insert(40)
+    BST.insert(90)
+    BST.insert(10)
+    console.log(BST)
+    expect(BST.DFSInorder()[1].value).toBe(10)
+  })
+})

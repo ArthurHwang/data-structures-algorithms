@@ -106,26 +106,18 @@ class BinarySearchTree {
     return data
   }
 
-  DFSInorder() {}
+  DFSInorder() {
+    const data = []
+    let current = this.root
+    const traverse = node => {
+      if (node.left) traverse(node.left)
+      data.push(node)
+      if (node.right) traverse(node.right)
+    }
+    traverse(current)
+    return data
+  }
 }
-
-const BST = new BinarySearchTree()
-
-BST.insert(100)
-BST.insert(0)
-BST.insert(40)
-BST.insert(90)
-BST.insert(10)
-
-// console.log(BST)
-// console.log(BST.contains(90))
-// console.log(BST.contains(33))
-// console.log(BST.search(40))
-// console.log(BST.search(50))
-// console.log(BST.BFS())
-console.log(BST.DFSPreorder())
-console.log(`WHORE${2 * 4}`)
-console.log(BST.DFSPostorder())
 
 // Insertion - O(log n)
 // Searching - O(log n)
