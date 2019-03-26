@@ -66,7 +66,7 @@ function tickets(peopleInLine) {
   return 'YES'
 }
 
-function tickets(peopleInLine) {
+function tickets2(peopleInLine) {
   const bills = { 25: 0, 50: 0 }
 
   for (let i = 0; i < peopleInLine.length; i++) {
