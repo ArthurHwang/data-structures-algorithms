@@ -14,6 +14,7 @@ describe('areThereDuplicatesPOINT', () => {
   })
 })
 
+
 describe('areThereDuplicatesFREQ', () => {
   test('it should be a function', () => {
     expect(typeof areThereDuplicatesFREQ).toEqual('function')
