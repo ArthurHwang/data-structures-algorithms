@@ -74,6 +74,7 @@ const uniqueMorseRepresentations = words => {
 
   for (const word of words) {
     let transformedWord = '';
+
     Array.prototype.forEach.call(word, char => {
       transformedWord += dictionary[char];
     });
