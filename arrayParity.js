@@ -76,24 +76,22 @@ var sortArrayByParityIII = function(A) {
 console.log(sortArrayByParityIII([4, 2, 5, 7]));
 
 var sortArrayByParityIV = function(A) {
+  const payload = [];
 
-
-  const payload = []
-
-  let evenIdx = 0
-  let oddIdx = 1
+  let evenIdx = 0;
+  let oddIdx = 1;
 
   for (let i = 0; i < A.length; i++) {
     if (A[i] % 2 === 0) {
-      payload[evenIdx] = A[i]
-      evenIdx += 2
+      payload[evenIdx] = A[i];
+      evenIdx += 2;
     } else {
-      payload[oddIdx] = A[i]
-      oddIdx += 2
+      payload[oddIdx] = A[i];
+      oddIdx += 2;
     }
   }
 
-  return payload
+  return payload;
 };
 
 console.log(sortArrayByParityIV([4, 2, 5, 7]));
