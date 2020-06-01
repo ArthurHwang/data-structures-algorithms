@@ -17,9 +17,12 @@
     "react/no-deprecated": 0,
     "no-case-declarations": 0,
     "no-undef": 0,
+    "space-before-function-paren": 0,
     "prefer-spread": 0,
+    "semi": 0,
     "no-restricted-syntax": 0,
     "guard-for-in": 0,
+    "no-unmodified-loop-condition": 0,
     "space-before-function-paren": [
       "error",
       {
