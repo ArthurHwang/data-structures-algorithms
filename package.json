@@ -1,0 +1,30 @@
+{
+  "name": "data-structures-algorithms",
+  "version": "1.0.0",
+  "description": "Personal training ground for data structures and algorithms",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArthurHwang/data-structures-algorithms"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ArthurHwang/data-structures-algorithms/issues"
+  },
+  "homepage": "https://github.com/ArthurHwang/data-structures-algorithms#readme",
+  "dependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb": "^17.0.0",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.18.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-node": "^7.0.1",
+    "eslint-plugin-promise": "^3.8.0",
+    "eslint-plugin-react": "^7.14.2",
+    "eslint-plugin-standard": "^3.1.0"
+  }
+}
