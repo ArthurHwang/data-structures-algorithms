@@ -27,18 +27,18 @@
 //   return exponentArray
 // }
 
-const sortedSquares = array => {
-  const exponentArray = []
+const sortedSquares = (array) => {
+  const exponentArray = [];
 
   for (let i = 0; i < array.length; i++) {
-    exponentArray.push(array[i] * array[i])
+    exponentArray.push(array[i] * array[i]);
   }
 
-  exponentArray.sort((a, b) => a - b)
+  exponentArray.sort((a, b) => a - b);
 
-  return exponentArray
-}
+  return exponentArray;
+};
 
-console.log(Math.pow(-4, 2))
+console.log(Math.pow(-4, 2));
 
-console.log(sortedSquares([-4, -1, 0, 3, 10]))
+console.log(sortedSquares([-4, -1, 0, 3, 10]));

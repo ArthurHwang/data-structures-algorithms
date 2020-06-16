@@ -1,40 +1,26 @@
-function anagram(str1, str2) {
-  if (typeof str1 !== 'string' || typeof str2 !== 'string') {
-    return undefined
+// Given two strings, write a function to determine if the second string is an anagram of the first.
+
+function anagram(str1 = '', str2 = '') {
+  if (typeof str1 !== 'string' || typeof str2 !== 'string') return false;
+  if (!str1.length || !str2.length) return false;
+
+  const hashOne = {};
+  const hashTwo = {};
+
+  for (const char of str1) {
+    hashOne[char] = hashOne[char] + 1 || 1;
   }
 
-  const hashStr1 = {}
-  const hashStr2 = {}
-
-  for (let char of str1) {
-    hashStr1[char] = hashStr1[char] + 1 || 1
+  for (const char of str2) {
+    hashTwo[char] = hashTwo[char] + 1 || 1;
   }
 
-  for (let char of str2) {
-    hashStr2[char] = hashStr2[char] + 1 || 1
-  }
-
-  let isObjEqual = objectValueEquality(hashStr1, hashStr2)
-
-  return isObjEqual
-}
-
-function objectValueEquality(obj1, obj2) {
-  const obj1Props = Object.getOwnPropertyNames(obj1)
-  const obj2Props = Object.getOwnPropertyNames(obj2)
-
-  if (obj1Props.length !== obj2Props.length) {
-    return false
-  }
-
-  for (let i = 0; i < obj1Props.length; i++) {
-    propertyName = obj1Props[i]
-    if (obj1Props[propertyName] !== obj2Props[propertyName]) {
-      return false
+  for (const key in hashOne) {
+    if (hashTwo[key] !== hashOne[key]) {
+      return false;
     }
   }
-
-  return true
+  return true;
 }
 
-module.exports = anagram
+module.exports = { anagram };
