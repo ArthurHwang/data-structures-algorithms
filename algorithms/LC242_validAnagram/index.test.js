@@ -1,4 +1,4 @@
-const { anagram } = require('.');
+const { validAnagram } = require('.');
 
 describe('anagram', () => {
   test('it should return false the both string lengths are not equal', () => {
