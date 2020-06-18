@@ -2,7 +2,7 @@
 
 // But for multiples of three it should output “Fizz” instead of the number and for the multiples of five output “Buzz”. For numbers which are multiples of both three and five output “FizzBuzz”.
 
-function fizzBuzz(n) {
+module.exports.fizzBuzz = (n) => {
   if (n <= 0) return undefined;
   if (typeof n !== 'number') return undefined;
 
@@ -23,4 +23,3 @@ function fizzBuzz(n) {
   return payload;
 }
 
-module.exports = { fizzBuzz };
