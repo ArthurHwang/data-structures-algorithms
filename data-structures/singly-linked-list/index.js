@@ -5,7 +5,7 @@ class Node {
   }
 }
 
-module.exports.SinglyLinkedList = class LinkedList {
+module.exports.SinglyLinkedList = class {
   constructor() {
     this.head = null;
     this.tail = null;
@@ -159,10 +159,10 @@ module.exports.SinglyLinkedList = class LinkedList {
     let temp;
 
     while (current) {
-      temp = current.next
-      current.next = previous
-      previous = current
-      current = temp
+      temp = current.next;
+      current.next = previous;
+      previous = current;
+      current = temp;
     }
   }
 };
