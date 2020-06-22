@@ -27,12 +27,15 @@ I write unit tests for every data structure and algorithm I implement.  Please f
 - Jest v26
 
 Clone the repository
+
 ```git clone https://github.com/ArthurHwang/data-structures-algorithms.git```
 
 Install jest globally
+
 ```npm i -g jest```
 
 Run the test suite
+
 ```npm run test``` 
 or 
 ```npm run test:cov``` for coverage reporting
