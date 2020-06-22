@@ -38,4 +38,4 @@ or
 ```npm run test:cov``` for coverage reporting
 
 
-[![unit-tests](https://arthurhwang.dev/static/LC-capture.png)](https://arthurhwang.dev/static/LC-capture.png)
+[![unit-tests](https://arthurhwang.dev/static/LC-capture.PNG)](https://arthurhwang.dev/static/LC-capture.PNG)
