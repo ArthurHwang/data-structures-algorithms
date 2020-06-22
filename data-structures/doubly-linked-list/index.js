@@ -70,11 +70,9 @@ module.exports.DoublyLinkedList = class {
   }
 
   get(idx) {
-    if (!this.head) return null;
     if (this.length === 1) return this.head;
     if (idx === this.length - 1) return this.tail;
-    if (idx > this.length - 1) return null;
-    if (idx < 0) return null;
+    if (!this.head || idx > this.length - 1 || idx < 0) return null;
 
     let current = this.head;
     let count = 0;
@@ -119,7 +117,6 @@ module.exports.DoublyLinkedList = class {
 
   remove(idx) {
     if (!this.head) return null;
-
     const findNode = this.get(idx);
 
     if (idx === 0) {
@@ -139,15 +136,3 @@ module.exports.DoublyLinkedList = class {
     }
   }
 };
-
-const DLL = new module.exports.DoublyLinkedList();
-
-DLL.push(5);
-DLL.push(6);
-DLL.push(7);
-DLL.remove(0);
-DLL.remove(5);
-
-const util = require('util');
-
-console.log(util.inspect(DLL, { showHidden: true, depth: null }));
