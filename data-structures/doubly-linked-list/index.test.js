@@ -13,7 +13,6 @@ describe('DoublyLinkedList', () => {
       DLL.push(5);
       DLL.push(6);
       DLL.push(7);
-      console.log(DLL);
       expect(DLL.length).toEqual(3);
       expect(DLL.head.val).toEqual(5);
       expect(DLL.tail.val).toEqual(7);

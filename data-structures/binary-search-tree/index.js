@@ -41,7 +41,7 @@ module.exports.BinarySearchTree = class {
     if (!this.root) return null;
     let current = this.root;
     while (current) {
-      if (current.value === val) return current;
+      if (current.value === val) return current.value;
       if (val < current.value) {
         current = current.left;
       } else {
@@ -76,22 +76,57 @@ module.exports.BinarySearchTree = class {
       node.left && queue.push(node.left);
       node.right && queue.push(node.right);
     }
+    return data;
+  }
 
+  DFSPreOrder() {
+    const data = [];
+    function traverse(node) {
+      data.push(node.value);
+      node.left && traverse(node.left);
+      node.right && traverse(node.right);
+    }
+    traverse(this.root);
+    return data;
+  }
+
+  DFSInOrder() {
+    const data = [];
+    function traverse(node) {
+      node.left && traverse(node.left);
+      data.push(node.value);
+      node.right && traverse(node.right);
+    }
+    traverse(this.root);
+    return data;
+  }
+
+  DFSPostOrder() {
+    const data = [];
+    function traverse(node) {
+      node.left && traverse(node.left);
+      node.right && traverse(node.right);
+      data.push(node.value);
+    }
+    traverse(this.root);
     return data;
   }
 };
 
-const BST = new module.exports.BinarySearchTree();
+// const BST = new module.exports.BinarySearchTree();
 
-BST.insert(5);
-BST.insert(7);
-BST.insert(3);
-BST.insert(20);
-BST.insert(1);
-// console.log(BST.find(20));
+// BST.insert(5);
+// BST.insert(7);
+// BST.insert(6);
+// BST.insert(3);
+// BST.insert(4);
+// BST.insert(20);
+// BST.insert(1);
+// // console.log(BST.find(20));
 
-console.log(BST.BFS());
+// console.log(BST.BFS());
+// console.log(BST.DFSPreOrder());
+// console.log(BST.DFSInOrder());
+// console.log(BST.DFSPostOrder());
 
-const util = require('util');
-
-// console.log(util.inspect(BST, { showHidden: false, depth: null }));
+// // console.log(util.inspect(BST, { showHidden: false, depth: null }));
