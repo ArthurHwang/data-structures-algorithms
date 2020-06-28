@@ -12,7 +12,7 @@ module.exports.SinglyLinkedList = class {
     this.length = 0;
   }
 
-  push(val) {
+  push = (val) => {
     const newNode = new Node(val);
     if (!this.head) {
       this.head = newNode;
@@ -22,9 +22,9 @@ module.exports.SinglyLinkedList = class {
       this.tail = newNode;
     }
     this.length++;
-  }
+  };
 
-  pop() {
+  pop = () => {
     if (!this.head) return undefined;
     let current = this.head;
     let newTail = current;
@@ -42,9 +42,9 @@ module.exports.SinglyLinkedList = class {
       this.head = null;
       this.tail = null;
     }
-  }
+  };
 
-  shift() {
+  shift = () => {
     if (!this.head) return undefined;
 
     let currentHead = this.head;
@@ -55,9 +55,9 @@ module.exports.SinglyLinkedList = class {
     if (this.length === 0) {
       this.tail = null;
     }
-  }
+  };
 
-  unshift(val) {
+  unshift = (val) => {
     const newNode = new Node(val);
     if (!this.head) {
       this.head = newNode;
@@ -68,9 +68,9 @@ module.exports.SinglyLinkedList = class {
       this.head.next = current;
     }
     this.length++;
-  }
+  };
 
-  get(idx) {
+  get = (idx) => {
     if (!this.head || !this.length) return null;
     if (idx > this.length || idx < 0) return undefined;
 
@@ -84,9 +84,9 @@ module.exports.SinglyLinkedList = class {
       current = current.next;
       count++;
     }
-  }
+  };
 
-  set(val, idx) {
+  set = (val, idx) => {
     const newNode = new Node(val);
 
     if (!this.head) {
@@ -102,9 +102,9 @@ module.exports.SinglyLinkedList = class {
       count++;
     }
     current.val = val;
-  }
+  };
 
-  insert(val, idx) {
+  insert = (val, idx) => {
     if (idx < 0 || idx > this.length) return false;
     if (idx === 0) {
       this.unshift(val);
@@ -128,9 +128,9 @@ module.exports.SinglyLinkedList = class {
       newNode.next = current;
       this.length++;
     }
-  }
+  };
 
-  remove(idx) {
+  remove = (idx) => {
     if (idx === 0) {
       this.shift();
       return;
@@ -147,9 +147,9 @@ module.exports.SinglyLinkedList = class {
     let temp = prev.next;
     prev.next = temp.next;
     this.length--;
-  }
+  };
 
-  reverse() {
+  reverse = () => {
     let current = this.head;
     this.head = this.tail;
     this.tail = current;
@@ -164,5 +164,5 @@ module.exports.SinglyLinkedList = class {
       previous = current;
       current = temp;
     }
-  }
+  };
 };

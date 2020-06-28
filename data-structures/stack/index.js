@@ -4,19 +4,19 @@ module.exports.Stack = class {
     this.size = 0;
   }
 
-  push(element) {
+  push = (element) => {
     this.size++;
     this.storage[this.size] = element;
-  }
+  };
 
-  pop() {
+  pop = () => {
     const removed = this.storage[this.size];
     delete this.storage[this.size];
     this.size--;
     return removed;
-  }
+  };
 
-  peek() {
+  peek = () => {
     return this.storage[this.size];
-  }
+  };
 };

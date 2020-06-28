@@ -11,7 +11,7 @@ module.exports.BinarySearchTree = class {
     this.root = null;
   }
 
-  insert(val) {
+  insert = (val) => {
     const newNode = new Node(val);
     if (!this.root) {
       this.root = newNode;
@@ -35,9 +35,9 @@ module.exports.BinarySearchTree = class {
         }
       }
     }
-  }
+  };
 
-  find(val) {
+  find = (val) => {
     if (!this.root) return null;
     let current = this.root;
     while (current) {
@@ -49,7 +49,7 @@ module.exports.BinarySearchTree = class {
       }
     }
     return null;
-  }
+  };
 
   contains(val) {
     if (!this.root) return false;
@@ -65,7 +65,7 @@ module.exports.BinarySearchTree = class {
     return false;
   }
 
-  BFS() {
+  BFS = () => {
     const data = [];
     const queue = [this.root];
     let node = null;
@@ -77,9 +77,9 @@ module.exports.BinarySearchTree = class {
       node.right && queue.push(node.right);
     }
     return data;
-  }
+  };
 
-  DFSPreOrder() {
+  DFSPreOrder = () => {
     const data = [];
     function traverse(node) {
       data.push(node.value);
@@ -88,9 +88,9 @@ module.exports.BinarySearchTree = class {
     }
     traverse(this.root);
     return data;
-  }
+  };
 
-  DFSInOrder() {
+  DFSInOrder = () => {
     const data = [];
     function traverse(node) {
       node.left && traverse(node.left);
@@ -99,9 +99,9 @@ module.exports.BinarySearchTree = class {
     }
     traverse(this.root);
     return data;
-  }
+  };
 
-  DFSPostOrder() {
+  DFSPostOrder = () => {
     const data = [];
     function traverse(node) {
       node.left && traverse(node.left);
@@ -110,23 +110,5 @@ module.exports.BinarySearchTree = class {
     }
     traverse(this.root);
     return data;
-  }
+  };
 };
-
-// const BST = new module.exports.BinarySearchTree();
-
-// BST.insert(5);
-// BST.insert(7);
-// BST.insert(6);
-// BST.insert(3);
-// BST.insert(4);
-// BST.insert(20);
-// BST.insert(1);
-// // console.log(BST.find(20));
-
-// console.log(BST.BFS());
-// console.log(BST.DFSPreOrder());
-// console.log(BST.DFSInOrder());
-// console.log(BST.DFSPostOrder());
-
-// // console.log(util.inspect(BST, { showHidden: false, depth: null }));

@@ -5,15 +5,15 @@ module.exports.Queue = class {
     this.tail = 0;
   }
 
-  enqueue(element) {
+  enqueue = (element) => {
     this.storage[this.tail] = element;
     this.tail++;
-  }
+  };
 
-  dequeue() {
+  dequeue = () => {
     const removed = this.storage[this.head];
     delete this.storage[this.head];
     this.head++;
     return removed;
-  }
+  };
 };

@@ -3,6 +3,14 @@
 // Example:
 
 // Input:  [1,2,3,4]
+//         [4,3,2,1]
+
+//      r  [1 , 1, 2, 6]
+//      l  [1, 4, 12, 24]
+//         [24,12,4,1]
+
+//         [24, 24, 12, 4]
+
 // Output: [24,12,8,6]
 // Constraint: It's guaranteed that the product of the elements of any prefix or suffix of the array (including the whole array) fits in a 32 bit integer.
 

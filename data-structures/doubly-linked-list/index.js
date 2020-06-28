@@ -17,7 +17,7 @@ module.exports.DoublyLinkedList = class {
     return this.length;
   }
 
-  push(val) {
+  push = (val) => {
     const newNode = new Node(val);
     if (!this.head) {
       this.head = newNode;
@@ -28,9 +28,9 @@ module.exports.DoublyLinkedList = class {
       this.tail = newNode;
     }
     this.length++;
-  }
+  };
 
-  pop() {
+  pop = () => {
     if (!this.head) return false;
     if (this.length === 1) {
       this.head = null;
@@ -40,9 +40,9 @@ module.exports.DoublyLinkedList = class {
       this.tail.next = null;
     }
     this.length--;
-  }
+  };
 
-  shift() {
+  shift = () => {
     if (!this.head) return false;
     if (this.length === 1) {
       this.head = null;
@@ -53,9 +53,9 @@ module.exports.DoublyLinkedList = class {
       this.head.prev = null;
     }
     this.length--;
-  }
+  };
 
-  unshift(val) {
+  unshift = (val) => {
     const newNode = new Node(val);
     if (!this.head) {
       this.head = newNode;
@@ -67,9 +67,9 @@ module.exports.DoublyLinkedList = class {
       temp.prev = this.head;
     }
     this.length++;
-  }
+  };
 
-  get(idx) {
+  get = (idx) => {
     if (this.length === 1) return this.head;
     if (idx === this.length - 1) return this.tail;
     if (!this.head || idx > this.length - 1 || idx < 0) return null;
@@ -82,9 +82,9 @@ module.exports.DoublyLinkedList = class {
       count++;
     }
     return current;
-  }
+  };
 
-  set(idx, val) {
+  set = (idx, val) => {
     const findNode = this.get(idx);
     if (findNode) {
       findNode.val = val;
@@ -92,9 +92,9 @@ module.exports.DoublyLinkedList = class {
     } else {
       return null;
     }
-  }
+  };
 
-  insert(idx, val) {
+  insert = (idx, val) => {
     if (!this.head || idx > this.length - 1) {
       this.push(val);
     } else if (idx === 0) {
@@ -113,9 +113,9 @@ module.exports.DoublyLinkedList = class {
       }
       this.length++;
     }
-  }
+  };
 
-  remove(idx) {
+  remove = (idx) => {
     if (!this.head) return null;
     const findNode = this.get(idx);
 
@@ -134,5 +134,5 @@ module.exports.DoublyLinkedList = class {
         this.length--;
       }
     }
-  }
+  };
 };
