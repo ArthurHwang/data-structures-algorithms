@@ -25,26 +25,27 @@ module.exports.sortArrayByParityII = (A) => {
   return result;
 };
 
-// module.exports.sortArrayByParityII = (A) => {
-//   if (!A.length) return -1;
-//   const evens = [];
-//   const odds = [];
-//   const res = [];
+// unoptimized
+module.exports._sortArrayByParityII = (A) => {
+  if (!A.length) return -1;
+  const evens = [];
+  const odds = [];
+  const res = [];
 
-//   for (const num of A) {
-//     if (num % 2 === 0) {
-//       evens.push(num);
-//     } else {
-//       odds.push(num);
-//     }
-//   }
+  for (const num of A) {
+    if (num % 2 === 0) {
+      evens.push(num);
+    } else {
+      odds.push(num);
+    }
+  }
 
-//   for (const [index, num] of A.entries()) {
-//     if (index % 2 === 0) {
-//       res.push(evens.pop());
-//     } else {
-//       res.push(odds.pop());
-//     }
-//   }
-//   return res;
-// };
+  for (const [index, num] of A.entries()) {
+    if (index % 2 === 0) {
+      res.push(evens.pop());
+    } else {
+      res.push(odds.pop());
+    }
+  }
+  return res;
+};
