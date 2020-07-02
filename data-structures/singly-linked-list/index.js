@@ -155,7 +155,6 @@ module.exports.SinglyLinkedList = class {
     this.tail = current;
 
     let previous = null;
-
     let temp;
 
     while (current) {
