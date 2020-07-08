@@ -31,7 +31,6 @@ module.exports.Graph = class {
   DFSRecursive = (start) => {
     const result = [];
     const visited = {};
-
     const traverse = (vertex) => {
       if (!vertex) return null;
 
@@ -44,8 +43,45 @@ module.exports.Graph = class {
         }
       });
     };
-
     traverse(start);
+    return result;
+  };
+
+  DFSIterative = (start) => {
+    const stack = [start];
+    const result = [];
+    const visited = {};
+    visited[start] = true;
+
+    while (stack.length) {
+      const vertex = stack.pop();
+      result.push(vertex);
+      this.adjacencyList[vertex].forEach((neighbor) => {
+        if (!visited[neighbor]) {
+          visited[neighbor] = true;
+          stack.push(neighbor);
+        }
+      });
+    }
+    return result;
+  };
+
+  BFS = (start) => {
+    const queue = [start];
+    const result = [];
+    const visited = {};
+    visited[start] = true;
+
+    while (queue.length) {
+      const vertex = queue.shift();
+      result.push(vertex);
+      this.adjacencyList[vertex].forEach((neighbor) => {
+        if (!visited[neighbor]) {
+          visited[neighbor] = true;
+          queue.push(neighbor);
+        }
+      });
+    }
     return result;
   };
 };
@@ -67,6 +103,8 @@ G.addEdge('D', 'E');
 G.addEdge('D', 'F');
 G.addEdge('E', 'F');
 
-console.log(G.DFSRecursive('A'));
+// console.log(G.DFSRecursive('A'));
+console.log(G.DFSIterative('A'));
+console.log(G.BFS('A'));
 
-console.log(G.adjacencyList);
+// console.log(G.adjacencyList);
