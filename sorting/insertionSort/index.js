@@ -7,8 +7,5 @@ module.exports.insertionSort = (arr) => {
     }
     arr[j + 1] = currentVal;
   }
-
   return arr;
 };
-
-console.log(this.insertionSort([-50, 200, 300, 100, 500]));
