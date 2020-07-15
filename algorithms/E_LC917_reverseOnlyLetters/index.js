@@ -32,7 +32,6 @@ var reverseOnlyLetters = function (S) {
       strArr[i] = alphas.shift();
     }
   }
-
   return strArr.join('');
 };
 
