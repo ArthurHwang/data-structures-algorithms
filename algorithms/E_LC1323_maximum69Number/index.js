@@ -5,8 +5,7 @@
 // Return the string formed after mapping.
 
 // It's guaranteed that a unique mapping will always exist.
-
-module.exports.maximum69Number = (num) => {
+module.exports.maximum69Number = num => {
   if (typeof num !== 'number') return undefined;
 
   let max = num;
