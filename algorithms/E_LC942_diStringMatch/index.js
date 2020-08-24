@@ -19,20 +19,20 @@
 // Output: [3,2,0,1]
 
 var diStringMatch = function (S) {
-  let minCount = 0;
-  let maxCount = S.length;
+	let minCount = 0;
+	let maxCount = S.length;
 
-  const result = [];
+	const result = [];
 
-  for (let i = 0; i < S.length; i++) {
-    if (S[i] === 'I') {
-      result.push(minCount);
-      minCount++;
-    } else {
-      result.push(maxCount);
-      maxCount--;
-    }
-  }
-  result.push(minCount);
-  return result;
+	for (let i = 0; i < S.length; i++) {
+		if (S[i] === 'I') {
+			result.push(minCount);
+			minCount++;
+		} else {
+			result.push(maxCount);
+			maxCount--;
+		}
+	}
+	result.push(minCount);
+	return result;
 };
